@@ -149,8 +149,8 @@ namespace Rastreador.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
-            RecoveryProvider recover = new RecoveryProvider();
-            string password = recover.RecoverPassword("KDGj56GJlmi9I1XoLwBB8wl2bNI=");
+           // RecoveryProvider recover = new RecoveryProvider();
+            //string password = recover.RecoverPassword("KDGj56GJlmi9I1XoLwBB8wl2bNI=");
             return View();
         }
 
