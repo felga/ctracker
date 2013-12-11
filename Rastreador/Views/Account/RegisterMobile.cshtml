@@ -1,0 +1,32 @@
+﻿@model Rastreador.Models.RegisterModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";    
+    ViewBag.Title = "Register";
+}
+<h1 style="text-align:center;color:#155662;font-size:2.3em;">Criar nova conta</h1>
+<br />
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true, "Não foi possível criar a conta. Corrija os erros e tente novamente.")
+    @Html.Hidden("UserName","NovoUsuario")
+    <div class="editor-field" style="text-align:center;height:70px;">
+        @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", style="width:260px;height:30px;"})<br />
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+@*    <div class="editor-field" style="padding-top:10px;">
+        @Html.TextBoxFor(m => m.Telefone, new { placeholder = "Telefone", style = "width:260px;height:30px;" })<br />
+        @Html.ValidationMessageFor(m => m.Telefone)
+    </div>*@
+    <div class="editor-field" style="text-align:center;height:70px;">
+        @Html.PasswordFor(m => m.Password, new { placeholder = "Senha", style = "width:260px;height:30px;" })<br />
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+    <div class="editor-field" style="text-align:center;height:70px;">
+        @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = "Confirme a senha", style = "width:260px;height:30px;" })<br />
+        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+    </div>
+    <p style="text-align:center">
+        <input type="image" src="../../Content/images/registrar.png" />
+    </p>    
+}

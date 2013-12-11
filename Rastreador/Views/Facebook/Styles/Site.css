@@ -1,0 +1,62 @@
+﻿table { border-spacing:0; }
+img {border-style:none;}
+
+body 
+{
+	background-color:white;
+	font-family:Verdana,Tahoma,Arial,Sans-Serif;
+	color:black;
+	font-size:12px;
+}
+
+
+.fonte1
+{    
+    font-size: 57px;
+    font-family: 'Conv_BebasNeue', Arial, Helvetica, Verdana, sans-serif;    
+    color: #ffffff;    
+}
+
+.fonte2
+{    
+    font-size: 32px;
+    font-family: 'Conv_BebasNeue', Arial, Helvetica, Verdana, sans-serif;    
+    color: #155662;    
+}
+
+.fonte22
+{    
+    font-size: 40px;
+    font-family: 'Conv_BebasNeue', Arial, Helvetica, Verdana, sans-serif;    
+    color: #155662;    
+}
+
+.fonte3
+{    
+    font-size: 24px;
+    font-family: 'Conv_BebasNeue', Arial, Helvetica, Verdana, sans-serif;    
+    color: #155662; 
+}
+
+.fonte4
+{    
+    font-size: 40px;
+    font-family: 'Conv_BebasNeue', Arial, Helvetica, Verdana, sans-serif;    
+    color: #ffffff;    
+}
+
+.fonteerro
+{    
+    font-size: 20px;
+    font-family: 'Conv_BebasNeue', Arial, Helvetica, Verdana, sans-serif;    
+    color: #ff0000;    
+}
+
+
+input[type="text"] { font-weight:600;font-size: 24px; border:1px solid #166f81;background: #fafafa; color:#6f6f6f; padding:9px 10px 7px;outline:none;font-family: "Conv_BebasNeue", Arial, Helvetica, Verdana, sans-serif;}
+
+a.menu:link    { font-family:  "Conv_BebasNeue", Arial, Helvetica, Verdana, sans-serif; color: #ffffff; text-decoration: none; }
+a.menu:visited { font-family:  "Conv_BebasNeue", Arial, Helvetica, Verdana, sans-serif; color: #ffffff; text-decoration: none; }
+a.menu:hover   { font-family:  "Conv_BebasNeue", Arial, Helvetica, Verdana, sans-serif; color: #7598ac; text-decoration: none; }
+a.menu:active  { font-family:  "Conv_BebasNeue", Arial, Helvetica, Verdana, sans-serif; color: #ffffff; text-decoration: none; }
+

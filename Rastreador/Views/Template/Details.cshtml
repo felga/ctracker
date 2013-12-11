@@ -1,0 +1,26 @@
+@model Rastreador.Template
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Template</legend>
+
+    <div class="display-label">HTML</div>
+    <div class="display-field">@Model.HTML</div>
+
+    <div class="display-label">IsDefault</div>
+    <div class="display-field">@Model.IsDefault</div>
+
+    <div class="display-label">Usuario</div>
+    <div class="display-field">@(Model.Usuario == null ? "None" : Model.Usuario.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

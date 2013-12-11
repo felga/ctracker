@@ -1,0 +1,63 @@
+@model IEnumerable<Rastreador.Encomenda>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Adicionar encomenda", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th width="200">
+            Nome
+        </th>
+        <th>
+            Codigo
+        </th>
+        <th>
+            Transportadora
+        </th>
+        <th>
+            DataUltimaAtualizacao
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            UltimaAtualizacao
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.Nome
+        </td>
+        <td>
+			@item.Codigo
+        </td>
+        <td>
+			@item.Transportadora
+        </td>
+        <td>
+			@String.Format("{0:g}", item.DataUltimaAtualizacao)
+        </td>
+        <td>
+			@item.Status
+        </td>
+        <td>
+			@item.UltimaAtualizacao
+        </td>
+    </tr>
+}
+
+</table>
+
+

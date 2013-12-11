@@ -1,0 +1,38 @@
+@model Rastreador.Encomenda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Encomenda</legend>
+
+    <div class="display-label">Nome</div>
+    <div class="display-field">@Model.Nome</div>
+
+    <div class="display-label">Codigo</div>
+    <div class="display-field">@Model.Codigo</div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+
+    <div class="display-label">Transportadora</div>
+    <div class="display-field">@Model.Transportadora</div>
+
+    <div class="display-label">DataUltimaAtualizacao</div>
+    <div class="display-field">@String.Format("{0:g}", Model.DataUltimaAtualizacao)</div>
+
+    <div class="display-label">UltimaAtualizacao</div>
+    <div class="display-field">@Model.UltimaAtualizacao</div>
+
+    <div class="display-label">Usuario</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Usuario).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

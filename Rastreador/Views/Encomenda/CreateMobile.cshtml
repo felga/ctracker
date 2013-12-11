@@ -1,0 +1,28 @@
+@model Rastreador.Encomenda
+
+@{
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+    ViewBag.Title = "Create";
+    string usuario = ViewBag.Usuario;
+}
+
+<br /><br /><br />
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false)
+    @Html.Hidden("Transportadora", "Correios")
+    @Html.Hidden("Email", usuario)
+    <div class="editor-field" style="text-align:center;height:70px;">
+        @Html.TextBoxFor(model => model.Nome, new { placeholder = "Descrição (Ex.: Televisão)", maxlength = "20", style = "width:260px;height:30px;" })<br />
+        @Html.ValidationMessageFor(model => model.Nome)
+    </div>
+    <div class="editor-field" style="text-align:center;height:70px;">
+        @Html.TextBoxFor(model => model.Codigo, new { placeholder = "Código", maxlength = "13", style = "width:260px;height:30px;" })<br />
+        @Html.ValidationMessageFor(model => model.Codigo)
+    </div>    
+    <p style="text-align:center">
+        <input type="image" src="../../Content/images/adicionarencomenda.png" />
+    </p>   
+}
+
+

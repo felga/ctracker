@@ -1,0 +1,29 @@
+@model Rastreador.Template
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Template</legend>
+
+    <div class="display-label">HTML</div>
+    <div class="display-field">@Model.HTML</div>
+
+    <div class="display-label">IsDefault</div>
+    <div class="display-field">@Model.IsDefault</div>
+
+    <div class="display-label">Usuario</div>
+    <div class="display-field">@(Model.Usuario == null ? "None" : Model.Usuario.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

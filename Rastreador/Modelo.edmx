@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RastreadorModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="RastreadorModelStoreContainer">
+          <EntitySet Name="Encomenda" EntityType="RastreadorModel.Store.Encomenda" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Template" EntityType="RastreadorModel.Store.Template" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="RastreadorModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Encomenda_Usuario" Association="RastreadorModel.Store.FK_Encomenda_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Encomenda" EntitySet="Encomenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Template" Association="RastreadorModel.Store.FK_Usuario_Template">
+            <End Role="Template" EntitySet="Template" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Encomenda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DataCadastro" Type="datetime" />
+          <Property Name="Codigo" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="UsuarioId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Transportadora" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DataUltimaAtualizacao" Type="datetime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UltimoEmail" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Template">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HTML" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Telefone" Type="nvarchar" MaxLength="15" />
+          <Property Name="TemplateId" Type="int" />
+          <Property Name="Token" Type="nvarchar" MaxLength="100" />
+          <Property Name="Modelo" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeviceId" Type="nvarchar" MaxLength="50" />
+          <Property Name="DataCadastro" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Encomenda_Usuario">
+          <End Role="Usuario" Type="RastreadorModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Encomenda" Type="RastreadorModel.Store.Encomenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Encomenda">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Template">
+          <End Role="Template" Type="RastreadorModel.Store.Template" Multiplicity="0..1" />
+          <End Role="Usuario" Type="RastreadorModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="TemplateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RastreadorModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="RastreadorEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Encomenda" EntityType="RastreadorModel.Encomenda" />
+          <EntitySet Name="Template" EntityType="RastreadorModel.Template" />
+          <EntitySet Name="Usuario" EntityType="RastreadorModel.Usuario" />
+          <AssociationSet Name="FK_Encomenda_Usuario" Association="RastreadorModel.FK_Encomenda_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Encomenda" EntitySet="Encomenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Template" Association="RastreadorModel.FK_Usuario_Template">
+            <End Role="Template" EntitySet="Template" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Encomenda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DataCadastro" />
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="UsuarioId" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Transportadora" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DataUltimaAtualizacao" Nullable="false" />
+          <Property Type="String" Name="UltimaAtualizacao" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UltimoEmail" />
+          <NavigationProperty Name="Usuario" Relationship="RastreadorModel.FK_Encomenda_Usuario" FromRole="Encomenda" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Template">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="HTML" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDefault" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="RastreadorModel.FK_Usuario_Template" FromRole="Template" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Login" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefone" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TemplateId" />
+          <Property Type="String" Name="Token" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Modelo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeviceId" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DataCadastro" />
+          <NavigationProperty Name="Encomenda" Relationship="RastreadorModel.FK_Encomenda_Usuario" FromRole="Usuario" ToRole="Encomenda" />
+          <NavigationProperty Name="Template" Relationship="RastreadorModel.FK_Usuario_Template" FromRole="Usuario" ToRole="Template" />
+        </EntityType>
+        <Association Name="FK_Encomenda_Usuario">
+          <End Type="RastreadorModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="RastreadorModel.Encomenda" Role="Encomenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Encomenda">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Template">
+          <End Type="RastreadorModel.Template" Role="Template" Multiplicity="0..1" />
+          <End Type="RastreadorModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="TemplateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RastreadorModelStoreContainer" CdmEntityContainer="RastreadorEntities">
+          <EntitySetMapping Name="Encomenda">
+            <EntityTypeMapping TypeName="RastreadorModel.Encomenda">
+              <MappingFragment StoreEntitySet="Encomenda">
+                <ScalarProperty Name="UltimoEmail" ColumnName="UltimoEmail" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UltimaAtualizacao" ColumnName="UltimaAtualizacao" />
+                <ScalarProperty Name="DataUltimaAtualizacao" ColumnName="DataUltimaAtualizacao" />
+                <ScalarProperty Name="Transportadora" ColumnName="Transportadora" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Template">
+            <EntityTypeMapping TypeName="RastreadorModel.Template">
+              <MappingFragment StoreEntitySet="Template">
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="HTML" ColumnName="HTML" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="RastreadorModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Modelo">
+        <EntityTypeShape EntityType="RastreadorModel.Encomenda" Width="1.5" PointX="5.25" PointY="1" Height="3.3263964843749996" />
+        <EntityTypeShape EntityType="RastreadorModel.Template" Width="1.5" PointX="0.75" PointY="1.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="RastreadorModel.Usuario" Width="1.5" PointX="3" PointY="1.125" Height="2.9417936197916674" />
+        <AssociationConnector Association="RastreadorModel.FK_Encomenda_Usuario" >
+          <ConnectorPoint PointX="4.5" PointY="2.5958968098958337" />
+          <ConnectorPoint PointX="5.25" PointY="2.5958968098958337" />
+        </AssociationConnector>
+        <AssociationConnector Association="RastreadorModel.FK_Usuario_Template" >
+          <ConnectorPoint PointX="2.25" PointY="2.6439925130208337" />
+          <ConnectorPoint PointX="3" PointY="2.6439925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
