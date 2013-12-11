@@ -192,99 +192,37 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Views\Facebook\imgs\a.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\apagar.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bg.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bglinha.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bglinha.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bglinha.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bglinha2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bgrodapelinha.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bgrodapelinhac.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bgrodapelinhad.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bgrodapelinhae.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bgtopo.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bgzao.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\bgzao2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\btadicionar.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\curtir.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\divisaod.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\divisaoe.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\divisaolinhatopo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\divisaolinhatopo2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\linha.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\linhamenor.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\logo.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\logo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\toponovaencomenda.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\toponovaencomenda2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\vd.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\imgs\vm.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\Styles\fonts.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\Styles\fonts\BebasNeue.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\Styles\Site.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Content\Facebook\imgs\a.png" />
+    <Content Include="Content\Facebook\imgs\apagar.gif" />
+    <Content Include="Content\Facebook\imgs\bg.gif" />
+    <Content Include="Content\Facebook\imgs\bglinha.gif" />
+    <Content Include="Content\Facebook\imgs\bglinha.jpg" />
+    <Content Include="Content\Facebook\imgs\bglinha.png" />
+    <Content Include="Content\Facebook\imgs\bglinha2.jpg" />
+    <Content Include="Content\Facebook\imgs\bgrodapelinha.png" />
+    <Content Include="Content\Facebook\imgs\bgrodapelinhac.png" />
+    <Content Include="Content\Facebook\imgs\bgrodapelinhad.png" />
+    <Content Include="Content\Facebook\imgs\bgrodapelinhae.png" />
+    <Content Include="Content\Facebook\imgs\bgtopo.gif" />
+    <Content Include="Content\Facebook\imgs\bgzao.jpg" />
+    <Content Include="Content\Facebook\imgs\bgzao2.jpg" />
+    <Content Include="Content\Facebook\imgs\btadicionar.png" />
+    <Content Include="Content\Facebook\imgs\curtir.gif" />
+    <Content Include="Content\Facebook\imgs\divisaod.gif" />
+    <Content Include="Content\Facebook\imgs\divisaoe.gif" />
+    <Content Include="Content\Facebook\imgs\divisaolinhatopo.png" />
+    <Content Include="Content\Facebook\imgs\divisaolinhatopo2.png" />
+    <Content Include="Content\Facebook\imgs\linha.gif" />
+    <Content Include="Content\Facebook\imgs\linhamenor.gif" />
+    <Content Include="Content\Facebook\imgs\logo.gif" />
+    <Content Include="Content\Facebook\imgs\logo.png" />
+    <Content Include="Content\Facebook\imgs\toponovaencomenda.png" />
+    <Content Include="Content\Facebook\imgs\toponovaencomenda2.png" />
+    <Content Include="Content\Facebook\imgs\vd.png" />
+    <Content Include="Content\Facebook\imgs\vm.png" />
+    <Content Include="Content\Facebook\Styles\fonts.css" />
+    <Content Include="Content\Facebook\Styles\fonts\BebasNeue.svg" />
+    <Content Include="Content\Facebook\Styles\Site.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -363,12 +301,8 @@
     <Content Include="Views\Encomenda\EncomendaCriada.cshtml" />
     <Content Include="Views\Facebook\Index.cshtml" />
     <Content Include="Views\Facebook\Login.cshtml" />
-    <Content Include="Views\Facebook\Styles\fonts\BebasNeue.eot">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Facebook\Styles\fonts\BebasNeue.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Content\Facebook\Styles\fonts\BebasNeue.eot" />
+    <Content Include="Content\Facebook\Styles\fonts\BebasNeue.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
