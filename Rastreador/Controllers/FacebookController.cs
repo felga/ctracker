@@ -20,6 +20,13 @@ namespace Rastreador.Controllers
         public ActionResult Index()
         {
 
+            string code = Request.QueryString["code"];
+            string appId = "618892811458967";
+            string appSecret = "e61f303ae68f738b1418cb96eafa15b1";
+            if (code == "" || code == null)
+            {
+                Response.Redirect("https://www.facebook.com/dialog/oauth?client_id=" + appId + "&redirect_uri=http://apps.facebook.com/rastreadorceltica/");
+            }
             var fb = new FacebookClient();
             string userid = Request.Params["userid"];
             if (Request.Params["userid"] == null || Request.Params["userid"] == "")
