@@ -36,10 +36,10 @@ namespace Rastreador.Controllers
             string userid = Request.Params["userid"];
             if (Request.Params["userid"] == null || Request.Params["userid"] == "")
             {
-                Session["Redirect"] = "https://www.facebook.com/dialog/oauth?client_id=" + appId + "&redirect_uri=http://apps.facebook.com/rastreadorceltica/";
-                return View("RedirecionarLogin");
-                //dynamic signedRequest = fb.ParseSignedRequest("e61f303ae68f738b1418cb96eafa15b1", Request.Params["signed_request"]);
-                //userid = signedRequest.user_id;
+                //Session["Redirect"] = "https://www.facebook.com/dialog/oauth?client_id=" + appId + "&redirect_uri=http://apps.facebook.com/rastreadorceltica/";
+                //return View("RedirecionarLogin");
+                dynamic signedRequest = fb.ParseSignedRequest("e61f303ae68f738b1418cb96eafa15b1", Request.Params["signed_request"]);
+                userid = signedRequest.user_id;
             }
             dynamic cliente = fb.Get(userid);
             ViewBag.Nome = cliente.name;
