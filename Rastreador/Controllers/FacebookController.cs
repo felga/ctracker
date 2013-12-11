@@ -16,16 +16,21 @@ namespace Rastreador.Controllers
     {
         //
         // GET: /Facebook/
-
+        public ActionResult RedirecionarLogin()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
-
+            Session["Redirect"] = "";
             string code = Request.QueryString["code"];
             string appId = "618892811458967";
             string appSecret = "e61f303ae68f738b1418cb96eafa15b1";
             if (code == "" || code == null)
             {
-                //Response.Redirect("https://www.facebook.com/dialog/oauth?client_id=" + appId + "&redirect_uri=http://apps.facebook.com/rastreadorceltica/");
+
+                Session["Redirect"] = "https://www.facebook.com/dialog/oauth?client_id=" + appId + "&redirect_uri=http://apps.facebook.com/rastreadorceltica/";
+                return View("RedirecionarLogin");
             }
             var fb = new FacebookClient();
             string userid = Request.Params["userid"];

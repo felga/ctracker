@@ -303,6 +303,7 @@
     <Content Include="Views\Facebook\Login.cshtml" />
     <Content Include="Content\Facebook\Styles\fonts\BebasNeue.eot" />
     <Content Include="Content\Facebook\Styles\fonts\BebasNeue.ttf" />
+    <Content Include="Views\Facebook\RedirecionarLogin.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
