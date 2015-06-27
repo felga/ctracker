@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>QuartzNetWebConsole</id>
+    <version>0.4.0</version>
+    <authors>Mauricio Scheffer</authors>
+    <owners>Mauricio Scheffer</owners>
+    <licenseUrl>https://github.com/mausch/QuartzNetWebConsole/raw/master/license.txt</licenseUrl>
+    <projectUrl>https://www.ohloh.net/p/QuartzNetWebConsole</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Embedded web Quartz.NET console/manager</description>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="Quartz" version="2.2.3" />
+    </dependencies>
+  </metadata>
+</package>
