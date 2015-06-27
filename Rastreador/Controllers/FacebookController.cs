@@ -28,7 +28,7 @@ namespace Rastreador.Controllers
             string appSecret = "e61f303ae68f738b1418cb96eafa15b1";
             if (code == "" || code == null)
             {
-
+            
                 Session["Redirect"] = "https://www.facebook.com/dialog/oauth?client_id=" + appId + "&redirect_uri=http://apps.facebook.com/rastreadorceltica/";
                 return View("RedirecionarLogin");
             }
@@ -41,8 +41,9 @@ namespace Rastreador.Controllers
                 dynamic signedRequest = fb.ParseSignedRequest("e61f303ae68f738b1418cb96eafa15b1", Request.Params["signed_request"]);
                 userid = signedRequest.user_id;
             }
-            dynamic cliente = fb.Get(userid);
-            ViewBag.Nome = cliente.name;
+            ViewBag.UID = userid;
+            //dynamic cliente = fb.Get(userid);
+            //ViewBag.Nome = cliente.name;
             ViewBag.UID = userid;
             string facebookuser = "FacebookUser:" + userid;
             if (Membership.GetUser(facebookuser) == null)
